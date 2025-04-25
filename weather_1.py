@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "442bc56f1271d043f53d356c728cc7e7"
+API_KEY = "YOU_API_KEY"
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
 def get_weather(city_name):
@@ -20,13 +20,13 @@ def get_weather(city_name):
         humidity = data["main"]["humidity"]
         wind = data["wind"]["speed"]
 
-        print(f'\nПогода в городе: {city}')
-        print(f'Температура: {temp}°C')
-        print(f'Описание: {description}')
-        print(f'Влажность: {humidity}%')
-        print(f'Скорость ветра: {wind} м/с')
+        print(f'\nWeather in city: {city}')
+        print(f'Temperature: {temp}°C')
+        print(f'Description: {description}')
+        print(f'Humidity: {humidity}%')
+        print(f'Wind speed: {wind} м/с')
     else:
-        print(f'Город не найден! Проверьте название.')
+        print(f'City not found! Check the name.')
 
-city = input("Введите название города: ")
+city = input("Enter the city name: ")
 get_weather(city)
